@@ -11,9 +11,9 @@ var tailX = [snakeX];
 var tailY = [snakeY];
 var fX;
 var fY;
-var running;
-var gameOver;
-var directions = -1; // up = 0, down = -1, left = 1, right = 2
+var running = false;
+var gameOver = false;
+var direction = -1; // up = 0, down = -1, left = 1, right = 2
 var int;
 
 //game start
@@ -56,7 +56,8 @@ function get(x,y){
 }
 
 function set(x,y,value){
-	get(x,y).setAttribute("class", value);
+	if (x != null && y != null)
+		get(x,y).setAttribute("class", value);
 }
 
 //create fruit
@@ -78,4 +79,34 @@ function createFruit(){
 	fX = fruitX;
 	fY = fruitY;
 }
+
+//snake controls
+window.addEventListener("keypress", function key(){
+	//Up directions on W key
+	var key = event.keyCode;
+	if(direction != -1 && (key == 119 || key == 87))
+		direction = 0;
+	//Down directions on S key
+	else if(direction !=0 && (key == 115 || key == 83))
+		direction = -1;
+	//Left directions on A key
+	else if(direction !=2 && (key == 97 || key == 65))
+		direction = 1;
+	//Right directions on D key
+	else if(direction !=1 && (key == 100 || key == 68))
+		direction = 2;
+	if(!running)
+		running = true;
+	else if(key == 32)
+		running = false;
+});
+	//Game Loop function
+function gameLoop(){
+	if(running && !gameOver){
+		update();
+	}else if(gameOver){
+		clearInterval(init);
+	}
+}
+
 run();
