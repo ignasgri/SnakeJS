@@ -1,28 +1,49 @@
-* {
-	padding: 0;
-	margin: 0;
-}
-
 body {
-	background-color: #000;
-	margin: 20px;
+	background-color: #000!important;
+	padding: 20px;
 }
  td{
  	width: 20px;
  	height: 20px;
  }
+ h1{
+ 	font-family: 'VT323', monospace!important;
+ 	text-align: center;
+ 	text-shadow: 0 1px 0 #636363;
+ }
 .blank{
 	background-color: #afaaaa;
 }
 .snake{
-	background-color: #a36509;
+	background-color: #807f7f;
 }
 .wall{
-	background-color: #1e6d02;
+	background-color: #231f20;
 }
 .fruit{
-	background-color: #ba0303;
+	background-color: #7a0000;
 }
 #score{
-	color: white;
+	width: 100%;
+	color: #7a0000;
+}
+.game{
+	text-align: center;
+	color: #bab8b8;
+}
+.classic{
+	width: 80%;
+	margin: auto;
+    align-items: center;
+    display: block;
+}
+.controls{
+	width: 50%;
+	margin: auto;
+    align-items: center;
+    display: block;
+}
+.info{
+	font-size: 10px;
+	padding-bottom: 20px;
 }
