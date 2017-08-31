@@ -5,13 +5,14 @@
 
 body {
 	background-color: #000;
+	margin: 20px;
 }
  td{
  	width: 20px;
  	height: 20px;
  }
 .blank{
-	background-color: red;
+	background-color: #afaaaa;
 }
 .snake{
 	background-color: #dbdbdb;
